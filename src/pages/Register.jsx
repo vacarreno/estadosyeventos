@@ -56,47 +56,51 @@ export default function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">Email:</label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="Ingrese su email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
+    <div className="container text-center mt-12">
+        <h2 className="text-center mt-4">Formulario de Registro</h2>
+        <p className="text-center mt-4">Por favor, complete el formulario para registrarse.</p>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email:</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  placeholder="Ingrese su email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <br />
 
-        <label htmlFor="contrasena" className="form-label">Contraseña:</label>
-        <input
-          type="password"
-          className="form-control"
-          id="contrasena"
-          placeholder="Ingrese su contraseña"
-          value={contrasena}
-          onChange={(e) => setContrasena(e.target.value)}
-        />
-        <br />
+                <label htmlFor="contrasena" className="form-label">Contraseña:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="contrasena"
+                  placeholder="Ingrese su contraseña"
+                  value={contrasena}
+                  onChange={(e) => setContrasena(e.target.value)}
+                />
+                <br />
 
-        <label htmlFor="validacontrasena" className="form-label">Confirmar contraseña:</label>
-        <input
-          type="password"
-          className="form-control"
-          id="validacontrasena"
-          placeholder="Repita su contraseña"
-          value={validacontrasena}
-          onChange={(e) => setValidaContrasena(e.target.value)}
-        />
-        <br />
+                <label htmlFor="validacontrasena" className="form-label">Confirmar contraseña:</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="validacontrasena"
+                  placeholder="Repita su contraseña"
+                  value={validacontrasena}
+                  onChange={(e) => setValidaContrasena(e.target.value)}
+                />
+                <br />
 
-        <button type="submit" className="btn btn-primary">Enviar</button>
+                <button type="submit" className="btn btn-primary">Enviar</button>
 
-        {error && (
-          <p className="text-danger mt-2">{mensajeError}</p>
-        )}
-      </div>
-    </form>
+                {error && (
+                  <p className="text-danger mt-2">{mensajeError}</p>
+                )}
+              </div>
+            </form>
+    </div>
   );
 }

@@ -46,35 +46,39 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">Email:</label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="Ingrese su email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
+    <div className="container text-center mt-12">
+      <h2 className="text-center mt-4">Login</h2>
+      <p className="text-center mt-4">Ingrese sus credenciales para ingresar al sistema.</p>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email:</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Ingrese su email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <br />
 
-        <label htmlFor="contrasena" className="form-label">Contraseña:</label>
-        <input
-          type="password"
-          className="form-control"
-          id="contrasena"
-          placeholder="Ingrese su contraseña"
-          value={contrasena}
-          onChange={(e) => setContrasena(e.target.value)}
-        />
-        <br />
+              <label htmlFor="contrasena" className="form-label">Contraseña:</label>
+              <input
+                type="password"
+                className="form-control"
+                id="contrasena"
+                placeholder="Ingrese su contraseña"
+                value={contrasena}
+                onChange={(e) => setContrasena(e.target.value)}
+              />
+              <br />
 
-        <button type="submit" className="btn btn-primary">Iniciar sesión</button>
+              <button type="submit" className="btn btn-primary">Iniciar sesión</button>
 
-        {error && <p className="text-danger mt-2">{mensajeError}</p>}
-        {mensajeExito && <p className="text-success mt-2">{mensajeExito}</p>}
-      </div>
-    </form>
+              {error && <p className="text-danger mt-2">{mensajeError}</p>}
+              {mensajeExito && <p className="text-success mt-2">{mensajeExito}</p>}
+            </div>
+          </form>
+    </div>
   );
 }

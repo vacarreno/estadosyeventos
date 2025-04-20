@@ -5,9 +5,8 @@ import CardPizza from "../components/CardPizza.jsx";
 import { useState } from "react";
 import BotonIncrementar from "../components/BotonIncrementar.jsx";
 import BotonDisminuir from "../components/BotonDisminuir.jsx";
-import Formulario from "../components/Formulario.jsx";
-import Register from "./Register.jsx";
-import Login from "./Login.jsx";
+//import Formulario from "../components/pruebas/Formulario.jsx";
+
 
 export default function Home() {
   const pizzas = [
@@ -67,53 +66,43 @@ export default function Home() {
   return (
     <div>
       <Header backgroundImage={fondoHeader} />
-    {/*
-    <div className="container text-center mt-4">
-        <h2 className="text-center mt-4">Cuenta: {cuenta}</h2>
 
-        <div className="flex justify-center gap-8 mt-4">
-          <BotonIncrementar
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-            incrementar={incrementarCuenta}
-          />
-          <BotonDisminuir
-            className="bg-red-500 text-white px-4 py-2 rounded"
-            disminuir={disminuirCuenta}
-          />
-        </div>
-      </div>
+    {/*************CONTADOR DE PIZZAS******************
+            <div className="container text-center mt-4">
+                <h2 className="text-center mt-4">Cuenta: {cuenta}</h2>
 
-      <div className="container text-center mt-4">
-      <Formulario/>
-    </div>
-*/}
-
-{/*
-                <div className="container text-center mt-12">
-                    <h2 className="text-center mt-4">Formulario de Registro</h2>
-                    <p className="text-center mt-4">Por favor, complete el formulario para registrarse.</p>
-                   <Register/>
+                <div className="flex justify-center gap-8 mt-4">
+                  <BotonIncrementar
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    incrementar={incrementarCuenta}
+                  />
+                  <BotonDisminuir
+                    className="bg-red-500 text-white px-4 py-2 rounded"
+                    disminuir={disminuirCuenta}
+                  />
                 </div>
-*/}
-                <div className="container text-center mt-12">
-                    <h2 className="text-center mt-4">Login</h2>
-                    <p className="text-center mt-4">Ingrese sus credenciales para ingresar al sistema.</p>
-                   <Login />
-                </div>
- {/*      
-      <div className="container py-4">
-        <div className="row g-4">
-          {pizzas.map((pizza, index) => (
-            <div
-              key={index}
-              className="col-12 col-sm-6 col-md-4 d-flex justify-content-center"
-            >
-              <CardPizza objeto={pizza} />
+              </div>
+
+              <div className="container text-center mt-4">
+              <Formulario/>
             </div>
-          ))}
-        </div>
-      </div>
-  */} 
+     */}
+
+               
+      {/*      
+          <div className="container py-4">
+            <div className="row g-4">
+              {pizzas.map((pizza, index) => (
+                <div
+                  key={index}
+                  className="col-12 col-sm-6 col-md-4 d-flex justify-content-center"
+                >
+                  <CardPizza objeto={pizza} />
+                </div>
+              ))}
+            </div>
+          </div>
+      */} 
     </div>
   );
 }

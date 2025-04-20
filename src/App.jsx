@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import NavBarr from "./components/NavBarr";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       <div className="d-flex flex-column min-vh-100">
         <NavBarr />
         <main className="flex-fill">
-         <Home />      
+         {/*<Home />*/}  
+         {/*<Login />*/}  
+         <Register />  
         </main>
         <Footer />
       </div>
