@@ -1,21 +1,19 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
-import Footer from "./components/common/Footer";
-import NavBarr from "./components/common/NavBarr";
-
+import Footer from "./components/Footer";
+import NavBarr from "./components/NavBarr";
 
 function App() {
   return (
     <>
-    <div className="d-flex flex-column min-vh-100">
-      <NavBarr />
+      <div className="d-flex flex-column min-vh-100">
+        <NavBarr />
         <main className="flex-fill">
-          <Home />
+         <Home />      
         </main>
         <Footer />
-    </div>
-        
+      </div>
     </>
   );
 }

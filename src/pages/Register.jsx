@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState('');
   const [contrasena, setContrasena] = useState('');
+  const [validacontrasena, setValidaContrasena] = useState('');
   const [error, setError] = useState(false);
   const [mensajeError, setMensajeError] = useState('');
-  const [mensajeExito, setMensajeExito] = useState('');
 
   const validarEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -15,21 +15,15 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-    setMensajeError('');
-    setMensajeExito('');
-    setError(false);
-
-    
-    if (email.trim() === '' || contrasena.trim() === '') {
+    if (email.trim() === '' || !validarEmail(email)) {
       setError(true);
-      setMensajeError('Todos los campos son obligatorios.');
+      setMensajeError('Ingrese un email válido.');
       return;
     }
 
-    if (!validarEmail(email)) {
+    if (contrasena.trim() === '') {
       setError(true);
-      setMensajeError('Ingrese un email válido.');
+      setMensajeError('Ingrese una contraseña.');
       return;
     }
 
@@ -39,10 +33,26 @@ export default function Login() {
       return;
     }
 
-    // Si pasa todas las validaciones
-    setMensajeExito('¡Inicio de sesión exitoso!');
+    if (validacontrasena.trim() === '') {
+      setError(true);
+      setMensajeError('Confirme su contraseña.');
+      return;
+    }
+
+    if (contrasena !== validacontrasena) {
+      setError(true);
+      setMensajeError('Las contraseñas no coinciden.');
+      return;
+    }
+
+    setError(false);
+    setMensajeError('');
+    alert('Formulario enviado con éxito 🎉');
+
+    
     setEmail('');
     setContrasena('');
+    setValidaContrasena('');
   };
 
   return (
@@ -70,10 +80,22 @@ export default function Login() {
         />
         <br />
 
-        <button type="submit" className="btn btn-primary">Iniciar sesión</button>
+        <label htmlFor="validacontrasena" className="form-label">Confirmar contraseña:</label>
+        <input
+          type="password"
+          className="form-control"
+          id="validacontrasena"
+          placeholder="Repita su contraseña"
+          value={validacontrasena}
+          onChange={(e) => setValidaContrasena(e.target.value)}
+        />
+        <br />
 
-        {error && <p className="text-danger mt-2">{mensajeError}</p>}
-        {mensajeExito && <p className="text-success mt-2">{mensajeExito}</p>}
+        <button type="submit" className="btn btn-primary">Enviar</button>
+
+        {error && (
+          <p className="text-danger mt-2">{mensajeError}</p>
+        )}
       </div>
     </form>
   );
